@@ -90,15 +90,12 @@ public class ENML4jDemo {
 				WstxOutputFactory.P_AUTOMATIC_EMPTY_ELEMENTS, false);
 	}
 
-	/**
-	 * 
-	 * @param args
-	 */
+
 	public static void main(String[] args) throws Exception {
 		if ("your developer token".equals(authToken)) {
 			System.err.println("Please fill in your developer token");
 			System.err
-					.println("To get a developer token, go to https://sandbox.evernote.com/api/DeveloperToken.action");
+					.println("To get a developer token, go to https://www.evernote.com/api/DeveloperToken.action");
 			return;
 		}
 		if ("/path/to/folder".equals(downloadFolder)) {
@@ -125,12 +122,12 @@ public class ENML4jDemo {
 					saveAttachement(note);
 
 					// Creates the mapping between the binary files URL and the Resources GUID
-					Map<String, URL> mapHashtoURL = new HashMap<String, URL>();
+					Map<String, String> mapHashtoURL = new HashMap<String, String>();
 					if (note.getResources() != null) {
 						for (Resource resource : note.getResources()) {
-							String attachementPath = noteDirectory + "/" + resource.getGuid()
+							String attachementPath = "./" + resource.getGuid()
 									+ config.getMimeRepository().forName(resource.getMime()).getExtension();
-							mapHashtoURL.put(resource.getGuid(), new File(attachementPath).toURI().toURL());
+							mapHashtoURL.put(resource.getGuid(), attachementPath);
 						}
 					}
 					// ///////////////////////////////////////////////////////////
@@ -180,10 +177,7 @@ public class ENML4jDemo {
 
 		File noteDirectory = new File(downloadFolder + "/" + note.getTitle());
 		noteDirectory.mkdir();
-
 		note = noteStore.getNote(authToken, note.getGuid(), true, true, false, false);
-
-		Map<String, URL> mapHashtoURL = new HashMap<String, URL>();
 		if (note.getResources() != null) {
 			for (Resource resource : note.getResources()) {
 				String attachementPath = noteDirectory + "/" + resource.getGuid()
@@ -192,8 +186,6 @@ public class ENML4jDemo {
 				bos.write(resource.getData().getBody());
 				bos.flush();
 				bos.close();
-				mapHashtoURL.put(Utils.bytesToHex(resource.getData().getBodyHash()), new File(attachementPath).toURI()
-						.toURL());
 			}
 		}
 	}
