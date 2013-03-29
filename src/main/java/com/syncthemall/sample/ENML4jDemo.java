@@ -4,7 +4,6 @@ import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.net.URL;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -30,7 +29,6 @@ import com.evernote.thrift.protocol.TBinaryProtocol;
 import com.evernote.thrift.transport.THttpClient;
 import com.evernote.thrift.transport.TTransportException;
 import com.syncthemall.enml4j.ENMLProcessor;
-import com.syncthemall.enml4j.util.Utils;
 
 public class ENML4jDemo {
 
