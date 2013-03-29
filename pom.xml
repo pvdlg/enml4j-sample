@@ -1,0 +1,56 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.syncthemall</groupId>
+	<artifactId>enml4j-sample</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>enml4j-sample</name>
+	<description>A sample application for ENML4j</description>
+	<url>https://github.com/vanduynslagerp/enml4j-sample</url>
+	<licenses>
+		<license>
+			<name>The MIT License</name>
+			<url>http://www.opensource.org/licenses/mit-license.php</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+	<scm>
+		<connection>scm:git:git@github.com:vanduynslagerp/enml4j-sample.git</connection>
+		<developerConnection>scm:git:git@github.com:vanduynslagerp/enml4j-sample.git</developerConnection>
+		<url>https://github.com/vanduynslagerp/enml4j-sample</url>
+	</scm>
+	<developers>
+		<developer>
+			<id>vanduynslagerp</id>
+			<name>Pierre-Denis Vanduynslager</name>
+			<email>pierre.denis.vanduynslager@gmail.com</email>
+		</developer>
+	</developers>
+	<dependencies>
+		<dependency>
+			<groupId>com.evernote</groupId>
+			<artifactId>evernote-api</artifactId>
+			<version>1.23</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.syncthemall</groupId>
+			<artifactId>enml4j</artifactId>
+			<version>0.1.0</version>
+		</dependency>
+		<dependency>
+			<!-- Uses woodstox as a stAX implementation -->
+			<groupId>org.codehaus.woodstox</groupId>
+			<artifactId>woodstox-core-asl</artifactId>
+			<version>4.1.2</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<!-- Used as a convenient way to map file extension to mime type -->
+			<!-- Used in this demo, but not requiered by ENML4j -->
+			<groupId>org.apache.tika</groupId>
+			<artifactId>tika-core</artifactId>
+			<version>0.9</version>
+		</dependency>
+	</dependencies>
+</project>
