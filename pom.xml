@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.syncthemall</groupId>
 	<artifactId>enml4j-sample</artifactId>
-	<version>0.2.0</version>
+	<version>0.2.1</version>
 	<name>enml4j-sample</name>
 	<description>A sample application for ENML4j</description>
 	<url>https://github.com/vanduynslagerp/enml4j-sample</url>
@@ -36,7 +36,7 @@
 		<dependency>
 			<groupId>com.syncthemall</groupId>
 			<artifactId>enml4j</artifactId>
-			<version>0.1.1</version>
+			<version>0.2.1</version>
 		</dependency>
 		<dependency>
 			<!-- Uses woodstox as a stAX implementation -->
