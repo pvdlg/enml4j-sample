@@ -54,9 +54,9 @@ import com.syncthemall.enml4j.ENMLProcessor;
 
 public class ENML4jDemo {
 
-	/***************************************************************************
-	 * You must change the following values before running this sample code *
-	 ***************************************************************************/
+	/****************************************************************************
+	 * You must change the following values before running this sample code     *
+	 ****************************************************************************/
 
 	// Real applications authenticate with Evernote using OAuth, but for the
 	// purpose of exploring the API, you can get a developer token that allows
@@ -64,29 +64,18 @@ public class ENML4jDemo {
 	// https://www.evernote.com/api/DeveloperToken.action
 	private static final String authToken = "your developer token";
 
-	/***************************************************************************
-	 * You shouldn't need to change anything below here to run sample code *
-	 ***************************************************************************/
-
-	// Initial development is performed on our sandbox server. To use the
-	// production service, change "sandbox.evernote.com" to "www.evernote.com"
-	// and replace your developer token above with a token from
-	// https://www.evernote.com/api/DeveloperToken.action
+	/****************************************************************************
+	 * You must change the following values before running this sample code     *
+	 ****************************************************************************/
+	private static final String downloadFolder = "/path/to/folder";
+	
+	/****************************************************************************
+	 * You shouldn't need to change anything below here to run this sample code *
+	 ****************************************************************************/
 	private static final String evernoteHost = "www.evernote.com";
 	private static final String userStoreUrl = "https://" + evernoteHost + "/edam/user";
-
-	// In a real application, you would change the User Agent to a string that
-	// describes your application, using the form company name/app name and
-	// version. Using
-	// a unique user agent string helps us provide you with better support.
 	private static final String userAgent = "Evernote/ENML4j (Java) " + Constants.EDAM_VERSION_MAJOR + "."
 			+ Constants.EDAM_VERSION_MINOR;
-
-	/***************************************************************************
-	 * You must change the following values before running this sample code *
-	 ***************************************************************************/
-	private static final String downloadFolder = "/path/to/folder";
-
 	private static NoteStore.Client noteStore;
 
 	// Used in this demo as a convenient way to map file extension to mime type
@@ -150,15 +139,15 @@ public class ENML4jDemo {
 							mapHashtoURL.put(resource.getGuid(), attachementPath);
 						}
 					}
-					// ///////////////////////////////////////////////////////////
-					// Option 1 : creates an HTML referencing the binary files //
-					// ///////////////////////////////////////////////////////////
+					// ///////////////////////////////////////////////////////////////
+					// Option 1 : creates an HTML file referencing the binary files //
+					// ///////////////////////////////////////////////////////////////
 					FileOutputStream fos = new FileOutputStream(noteDirectory + "/" + note.getTitle() + ".html");
 					ENMLProcessor.noteToHTML(note, mapHashtoURL, fos);
 
-					// ////////////////////////////////////////////////////////
-					// Option 2 : creates an HTML with inline binary files //
-					// ////////////////////////////////////////////////////////
+					// ///////////////////////////////////////////////////////////
+					// Option 2 : creates an HTML file with inline binary files //
+					// ///////////////////////////////////////////////////////////
 					FileOutputStream fos2 = new FileOutputStream(noteDirectory + "/" + note.getTitle() + "-inline.html");
 					ENMLProcessor.noteToInlineHTML(note, fos2);
 
