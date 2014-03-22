@@ -42,7 +42,7 @@
 			<!-- Uses woodstox as a stAX implementation -->
 			<groupId>org.codehaus.woodstox</groupId>
 			<artifactId>woodstox-core-asl</artifactId>
-			<version>4.2.0</version>
+			<version>4.2.1</version>
 		</dependency>
 		<dependency>
 			<!-- Used as a convenient way to map file extension to mime type -->
